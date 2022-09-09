@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ClassComponent from "./component/ClassComponent";
+import FunctionalComponent from "./component/FunctionalComponent";
+import { useState } from "react";
 
+//creating our first component
 function App() {
+  const [name, setName] = useState("Aditya");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="AppIT">
+      <h1>Class Component</h1>
+      <ClassComponent />
+      <br />
+      <h1>Functional Component</h1>
+      <FunctionalComponent
+        name={name}
+        age={21}
+        setName={setName}
+        // setnameData={setnameData}
+      />
     </div>
   );
 }
